@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button {
+  font-family: "Oswald Light", "Roboto Condensed", sans-serif;
+  width: 10vw;
+  margin: 5px 0 5px 0;
+}
+
+button:disabled {
+  background-color: rgba(80, 80, 89, 0.2) !important;
+}
+
+@media (max-width: 800px) {
+  button {
+    width: 80px;
+  }
+}
+
+.centerHorizontal {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.centerVertical {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.contentContainer {
+  width: 80%;
+}
+
+@media screen and (orientation: portrait) {
+  .contentContainer {
+    width: 100%;
+  }
+}
+
+.dn {
+  display: none
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+}
+
+.infoDesk {
+  width: 50%;
+  background-color: grey;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.navbar {
+  background-color: grey;
+  height: 30px;
+  display: flex;
+  justify-content: right;
+}
+
+.navbar ul {
+  margin: 0 0 0 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar ul li {
+  margin-right: 10px;
+}
+
+.navbar li a {
+  font-family: "Oswald Light", "Roboto Condensed", sans-serif;
+  font-size: large;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .navbar li a {
+    font-size: small;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar li a {
+    font-size: x-small;
+  }
+}
+
+a:active {
+  color: gold;
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.h80 {
+  height: 80vh;
+}

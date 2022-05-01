@@ -1,0 +1,107 @@
+<div
+  class="centerHorizontal scroll"
+>
+
+  <ng-container *ngIf="message">
+    <h2 class="infoDesk centerHorizontal">
+      {{message}}
+    </h2>
+  </ng-container>
+
+  <div>
+
+    <input
+      title="hidden input for file uploading"
+      class="dn"
+      type="file"
+      multiple
+      (change)="loadFile($event)"
+      #fileInput
+    />
+
+    <button
+      title="button to click input file"
+      [background]="'green'"
+      appButtonStyle
+      (click)="clickInputFile($event)"
+    >
+      choose file
+    </button>
+
+    <button
+      title="button to click input file"
+      [background]="'orange'"
+      appButtonStyle
+      (click)="resetEditor($event)"
+    >
+      reset
+    </button>
+
+  </div>
+  <ng-container>
+
+  </ng-container>
+
+  <ng-container *ngIf="loading">
+    <h3>завантажуємо, зачекайте ...</h3>
+  </ng-container>
+
+  <ng-container *ngIf="mediaSrc">
+
+    <ng-container *ngIf="mediaIsVideo() && showBeforeVideo">
+      <h3>... ще трішки ...</h3>
+    </ng-container>
+
+    <img
+      *ngIf="mediaIsImage()"
+      alt="image preview"
+      class="centerHorizontal"
+      [src]="mediaSrc"
+      #image
+    >
+
+    <video *ngIf="mediaIsVideo()" class="centerHorizontal" controls #video>
+      <source
+        [src]="mediaSrc"
+        type="video/mp4"
+      />
+    </video>
+
+  </ng-container>
+
+  <form
+    [formGroup]="messageForm"
+    (ngSubmit)="onSubmit(messageForm.value)"
+  >
+    <mat-form-field>
+            <textarea
+              matInput
+              [cols] = "100"
+              [rows] = "5"
+              formControlName="capture"
+            >
+      </textarea>
+    </mat-form-field>
+
+  </form>
+
+
+  <div>
+    <button
+      [background]="'gray'"
+      appButtonStyle
+      (click)="closeEditor()"
+    >
+      cancel
+    </button>
+
+    <button
+      [disabled]="!loadingAllowed"
+      [background]="'green'"
+      appButtonStyle
+    >
+      load file
+    </button>
+  </div>
+
+</div>
