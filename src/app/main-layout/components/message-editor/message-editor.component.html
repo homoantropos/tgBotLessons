@@ -82,26 +82,24 @@
             >
       </textarea>
     </mat-form-field>
+    <div>
+      <button
+        [background]="'gray'"
+        appButtonStyle
+        (click)="closeEditor()"
+      >
+        cancel
+      </button>
 
+      <button
+        type="submit"
+        [disabled]="!loadingAllowed"
+        [background]="'green'"
+        appButtonStyle
+      >
+        load file
+      </button>
+    </div>
   </form>
-
-
-  <div>
-    <button
-      [background]="'gray'"
-      appButtonStyle
-      (click)="closeEditor()"
-    >
-      cancel
-    </button>
-
-    <button
-      [disabled]="!loadingAllowed"
-      [background]="'green'"
-      appButtonStyle
-    >
-      load file
-    </button>
-  </div>
 
 </div>
